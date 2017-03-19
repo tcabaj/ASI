@@ -1,6 +1,16 @@
-<%= simple_form_for @movie do |f| %>
-  <%= f.input :title, label: "Movie Title" %>
-  <%= f.input :description, label: "Description" %>
-  <%= f.input :director, label: "Director" %>
-  <%= f.button :submit %>
-<% end %>
+<div style="width:500px;">
+  <%= simple_form_for @movie do |f| %>
+  <p>
+    <%= f.input :title, label: "Movie Title" %>
+  </p>
+  <p>
+    <%= f.input :description, label: "Description" %>
+  </p>
+  <p>
+    <%= f.input :director, label: "Director" %>
+  </p>
+  <p>
+    <%= f.button :submit %>
+  </p>
+  <% end %>
+</div>

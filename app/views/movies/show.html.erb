@@ -1,6 +1,16 @@
-  <h2><%= @movie.title %></h2>
-  <h2><%= @movie.director %></h2>
-  <p><%= @movie.description %></p>
+<div style="display:inline-block;">
+<div>
+  <h2> Title : <%= @movie.title %></h2>
+  <h3> Director : <%= @movie.director %></h3>
+  <p> Description :<br><%= @movie.description %></p>
+</div>
+<div>
 <%= link_to "Back", root_path %>
-<%= link_to "Edit", edit_movie_path(@movie) %>
-<%= link_to "Delete", movie_path(@movie), method: :delete, data: { confirm: "Are you sure?"} %>
+
+<% if user_signed_in? %>
+  <% if @movie.user_id == current_user.id %>
+  <%= link_to "Edit", edit_movie_path(@movie) %>
+  <%= link_to "Delete", movie_path(@movie), method: :delete, data: { confirm: "Are you sure?"} %>
+  <% end %>
+<% end %>
+</div>
